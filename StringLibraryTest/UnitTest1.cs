@@ -229,7 +229,7 @@ public class UnitTest1
         // Assert
         Assert.AreEqual(expectedProduct, actualProduct);
     }
-
+// DIVISION LOGIC
     [TestMethod]
     public void Test_Divide_TwoPositiveNumbers_ReturnsCorrectQuotient()
     {
@@ -282,6 +282,21 @@ public class UnitTest1
        decimal dividend = 9876543210.0m;
         decimal divisor = 1234567890.0m;
         decimal expectedQuotient = 8.000000072900000663390006037m;
+
+        // Act
+        decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+        // Assert
+        Assert.AreEqual(expectedQuotient, actualQuotient);
+    }
+
+    [TestMethod]
+       public void Test_Divide_SmallDividendByLargeDivisor_ReturnsCorrectQuotient()
+    {
+        // Arrange
+        decimal dividend = 100.0m;
+        decimal divisor = 1000000.0m;
+        decimal expectedQuotient = 0.0001m;
 
         // Act
         decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
